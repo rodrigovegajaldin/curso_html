@@ -1,0 +1,154 @@
+<!--<etiqueta atributo="valor"> texto o datos </etiqueta>
+
+<strong>Hola mundo desde HTML!!</strong>
+
+<h1> Hola mundo </h1>
+<h2> Hola mundo </h2>
+<h3> Hola mundo </h3>
+<h4> Hola mundo </h4>
+<h5> Hola mundo </h5>
+<h6> Hola mundo </h6>
+-->
+<!--AQUI VEREMOS LA ESTRUCTURA BASICA DE UNA PAGINA WEN CON HTML-->
+
+<!DOCTYPE HTML><!--esto dice que que vamos a usar HTML5-->
+
+<html lang="es"><!--esta es la apertura de la etiqueta principal de la pagina web, el ATRIBUTO lang nos dice que vamos a usar el idioma espanol-->
+
+	<head><!--el contenido de esto no se muestra en la pagina web-->
+		<title>Mi primera pagina web</title><!--esto pone nombre a la pestana de la pagina web-->
+	</head>
+
+	<body><!--en el body se pone el ocntenido que se mostrara en la pagina web-->
+		<h1> Titulo de mi web </h1>
+		<p>
+			este es el parrafo 1 de la pagina web<br/><!--hace un slato de lina-->hice un salto de linea<hr/><!--hace un slato de linea y debuja un alinea horizontal-->dibuje una linea
+le di enter<!--por mas que le de enter en codigo, nostrara continuo en la pagina-->
+
+		</p>
+		<h2> Bienvenidos a mi web </h2>
+			<strong>este es mi texto en negritas</strong>
+			<hr/>
+			<em>este es mi texto en cursiva</em>
+			<br/>
+			<span id="resaltado" class="rojo amarillo">texto dentro de span</span>
+			<!-- esto no cambiara el texto en la pagina, id es el identificador y class es para cambiar el estilo ya sea con css-->
+			<br/>
+			<blockquote>este es el texto dentro de blockquote que esta en forma de cita</blockquote>
+			<!--esto hace que el contenido se lo presente en forma de cita-->
+		<h3>subtitulo de orden 3</h3>
+		<h4>subtitulo de lista enumerada</h4>
+			<ol><!--asi hacemos una lista enumerada-->
+				<li>primer objeto de la lista</li><!--asi ponemos los objetos de la lista-->
+				<li>segundo objeto de la lista</li>
+				<li>tercer objeto de la lista</li>
+				<ol><!--poniendo una lista dentro de otra hacemos una sublista-->
+					<li>primer objeto de sublista</li>
+					<li>segundo objeto de sublista</li>
+				</ol>
+			</ol>
+		<h4>subtitulo de lista con simbolos</h4>
+			<ul><!--asi hacemos una lista con simbolos-->
+				<li>primer objeto de la lista</li>
+				<li>segundo objeto de la lista</li>
+				<li>tercer objeto de la lista</li>
+				<ul><!--poniendo una lista dentro de otra hacemos una sublista-->
+					<li>primer objeto de sublista</li>
+					<li>segundo objeto de sublista</li>
+				</ul>
+			</ul>
+		<h2>subtitulo de la imagen</h2>
+			<img src="imagenes/imagen.png" alt="no puedo cargar la imagen" title="imagen cargada" width="50px" height="200px"/>
+			<!--asi ponemos una imagen, src es el path a la imagen(mejor poner ruta relativa,
+alt es un mensaje que se mostrara cuando no se pudo cargar la imagen
+title es una pestana que saldra cuando pasamos el mouse por la imagen
+width es el ancho de la imagen
+height es la altura la imagen-->
+
+		<hr/>
+		
+		<h2>subtitulo de tablas</h2>
+			<table border="10" width="800" height="350">
+			<!--<table border="10" width="75%" height="75%">-->
+<!--asi creamos la tabla, 
+border ponemos las lineas de las celdas y el valor dice cuantos pixeles ocupara el borde exterior de la tabla
+width dice el ancho en pixeles que ocupara la tabla, tambien puede ser en porcentaje de la pantalla poniendo un %despues del numero
+height es la altura de la pantalla y tambien se lo puede poner en porcentaje-->
+
+				<caption>titulo de tabla</caption>
+				<tr><!--asi cramos las filas-->
+					<th rowspan="3">juntamos filas</th>
+					<th scope="row">nombres</th><!--asi ponemos en negrilla y centreamos el texto en esta celda, y tambien es para columnas-->
+					<th>apellidos</th>
+					<th>telefonos</th>
+				</tr>
+				<tr>
+					<td>Rodrigo</td><!--asi creamos una columna normal-->
+					<td>Vega</td>
+					<td>79796749</td>
+				</tr>
+				<tr>
+					<td>elias</td>
+					<td>tapia</td><!--con colspan en una columna decimos que esa celda ocupara 2 columnas-->
+					<td>12345678</td>
+				</tr>
+				<tr>
+					<td colspan="4">juntamos columnas</td>
+				</tr>
+			</table>
+		<hr/>	
+		<h2>subtitulo de formularios</h2>
+			<form>
+				<p>
+				<label for="identificador">etiqueta del campo</label><!--asi ponemos una etiqueta 
+for especifica para que objeto es la etiqueta asignandole su identificador-->
+				<input type="text" name="identificador" placeholder="introduce tu nombre..."/><!--asi ponemos una caja para escribir enla pagina
+type nos dice que sera una caja de tipo texto
+name nos dice el identificador que le pondremos a la caja
+placeholder es un mensaje que se mostrara en la caja mientras no introduscamos nada en ella-->
+				</p>
+
+				<p>
+				<label for="descripcion">etiqueta de descripcion</label>
+				<textarea name"descripcion"></textarea><!--asi creamos una caja para meter arto texto 
+podemos poner su identificador-->
+				</p>
+
+				<p>
+				<label for="genero">etiqueta de seleccionar en boton</label>
+				<br/>
+				<input type="radio" name="genero" value="hombre">Hombre<br/><!--asi ponemos un boton de obsion 
+value nos dice el valor que tendra esa opsion
+solo podremos escoger 1 POR GRUPO DE BOTON CON EL MISMO IDENTIFICADOR-->
+				<input type="radio" name="genero" value="mujer">Mujer<br/>
+				<input type="radio" name="genero" value="nada">Nada<br/>
+				</p>
+
+				<p>
+				<label for="seleccionar">etiqueta de seleccionar en lista</label> 
+				<select name="seleccionar"><!--asi ponemos una caja para seleccionar opciones
+podmeos ponerle identificador-->
+					<option value="hombre">Hombre</option><!--asi ponemos las opciones de la lista-->
+					<option value="mujer">Mujer</option>
+					<option value="nada">Nada</option>
+				</select>
+				</p>	
+				
+				<p>
+				<label for="check">Etiqueta del checkbox</label>
+				<br/>
+				<input type="checkbox" name="check" value="hetero"/>Hetero<br/>
+				<input type="checkbox" name="check" value="gay"/>Gay<br/>
+				<input type="checkbox" name="check" value="lesbi"/>Lesbi<br/>
+				<br/>
+				<input type="submit" value="enviar formulario"/><!--asi ponemos un boton para enviar el formulario-->
+
+			</form>
+			<hr/>
+			<a href="https://www.youtube.com/" target="_blank">link a youtube</a>
+
+
+	</body>
+
+</hmtl><!--este es el cierre de etiqueta principal de la pagina web-->
+

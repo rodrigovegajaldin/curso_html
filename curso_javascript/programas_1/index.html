@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8"><!--esto nos dice el tipo de codificacion html del documento-->
+	<title>JavaScript</title>
+
+</head>
+
+<body> 
+
+	<button onclick="presionoClick()">BOTON</button><!--asi se pone un boton
+onclick nos dice que cuando se presione llamara la funcion "presionoClick()"-->
+
+	<hr/>
+
+	<script src="app.js">importe el script</script>
+<b>Ingrese un número entre 18 y 99:</b>
+<input type="text" name="age" size=10 onChange="validate(this, 18, 99),mensaje(this.name,this.value);">	
+	
+	<hr/>
+
+                                <select name="seleccionar" onchange=mensaje(this.name,this.value)><!--asi ponemos una caja para seleccionar opciones
+podmeos ponerle identificador-->
+                                        <option value="hombre">Hombre</option><!--asi ponemos las opciones de la lista-->
+                                        <option value="mujer">Mujer</option>
+                                        <option value="nada">Nada</option>
+                                </select>
+	<hr/>
+	
+	<label for='texto'>etiqueta de caja de texto</label>
+	<textarea name="texto" onchange=mensaje(this.name,this.value)></textarea>
+
+</body>
+</html>

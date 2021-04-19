@@ -1,0 +1,108 @@
+<!--en este programa probajos de poner la parte de HTML y la parte de JAVASCRIPT en un solo programa-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8"><!--esto nos dice el tipo de codificacion html del documento-->
+	<title>JavaScript</title>
+
+</head>
+
+<body> 
+
+	<button onclick="presionoClick()">BOTON</button><!--asi se pone un boton
+onclick nos dice que cuando se presione llamara la funcion "presionoClick()"-->
+
+	<hr/>
+
+<b>Ingrese un número entre 18 y 99:</b>
+<input type="text" name="age" size=10 onChange="validate(this, 18, 99),mensaje(this.name,this.value);">	
+	
+	<hr/>
+
+                                <select name="seleccionar" onchange=mensaje(this.name,this.value)><!--asi ponemos una caja para seleccionar opciones
+podmeos ponerle identificador-->
+                                        <option value="hombre">Hombre</option><!--asi ponemos las opciones de la lista-->
+                                        <option value="mujer">Mujer</option>
+                                        <option value="nada">Nada</option>
+                                </select>
+	<hr/>
+	
+	<label for='texto'>etiqueta de caja de texto</label>
+	<textarea name="texto" onchange=mensaje(this.name,this.value)></textarea>
+
+<!------------------------------------------------------------->
+	<script>
+	console.log('importe el script');
+
+	function persona(){
+	this.nombre = 'rodrigo';
+	this.apellido = 'vega';
+	this.edad = 30;
+	this.persona2 = function(){
+		console.log('soy la funcion2')
+		this.nombre = 'marcelo'
+		console.log(this.nombre)};
+	console.log(this.nombre)
+
+	}
+	var personita = new persona();
+	personita.persona2();
+	console.log(personita);
+
+function presionoClick(){
+	console.log("click en el boton");
+}
+
+
+function mensaje(nombre,valor){
+	if(nombre=="age"){
+	console.log("INTORDUJISTE:",valor,'EDAD');
+	}
+	else if (nombre=="seleccionar"){
+	console.log('SELECCIONASTE:',valor);
+	}
+	else if (nombre=="texto"){
+	console.log('DESCRIPCION ES: \n',valor)
+	}
+	
+}
+function validate(obj, lowval, hival){
+  if ((obj.value < lowval) || (obj.value > hival))
+    alert("¡Valor inválido!");
+}
+
+function estricto(){
+"use strict";
+var x = 5;
+console.log(x);
+//delete x;
+console.log(estricto);
+}
+estricto();
+
+function funcion1(){
+	console.log('soy funcion 1');
+	function funcion2(){
+		console.log('soy funcion 2');
+	}
+	funcion2();
+	this.funcion3 = function(){
+		console.log('soy funcion 3');
+	}
+	this.funcion3();
+}
+var variables = new funcion1();
+//variables.funcion2();<!--esto no se puede poq funcion2 es un objeto local-->
+variables.funcion3();
+
+//console.log('el tipo de funcion1 es : ',typeof(funcion1))
+//var arreglo = [1,2,3,4,5];
+//console.log('el tipo original es:',typeof(arreglo))
+//console.log('el arrelgo es de tipo:',typeof(arreglo.join()),'\n',arreglo.join())
+
+
+	</script>
+</body>
+</html>
